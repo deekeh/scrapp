@@ -1,0 +1,29 @@
+body
+{
+	margin-left: 4%;
+}
+
+.text
+{
+	display: block;
+	border: solid;
+	border-width: 0 0 2px 0;
+	padding-bottom: 3px;
+	border-radius: 5px;
+}
+.text:focus
+{
+	border-color: #129c00;
+}
+
+#submit
+{
+	background-color: transparent;
+	padding: 6.5px 9px;
+	border: solid;
+	border-color: #0000A0;
+	color: #0000A0;
+	border-radius: 10px;
+	width: 130px;
+	font-size: 20px;
+}
