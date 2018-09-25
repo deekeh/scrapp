@@ -8,7 +8,7 @@
 	<form method="post" action="in.php">
 		<?php
 		session_start();
-		if(isset($_SESSION['uid']) == '')
+		if(isset($_SESSION['uid']) == false)
 		{
 			echo '<label>Email- id:<input type="email" name="mail" class="text" required></label><br><br>';
 			echo '<label>Password:<input type="password" name="passwd" class="text" required></label><br><br>';
