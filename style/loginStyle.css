@@ -7,9 +7,10 @@ body
 {
 	display: block;
 	border: solid;
-	border-width: 0 0 2px 0;
+	border-width: 1.5px 1.5px 1.5px 1.5px;
 	padding-bottom: 3px;
-	border-radius: 5px;
+	border-radius: 2px;
+	/*border-color: #129C00;*/
 }
 .text:focus
 {
