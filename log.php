@@ -12,7 +12,7 @@
 		{
 			echo '<label>Email- id:<input type="email" name="mail" class="text" required></label><br><br>';
 			echo '<label>Password:<input type="password" name="passwd" class="text" required></label><br><br>';
-			echo '<input type="submit" name="submit" value="Submit" id="submit">';
+			echo '<input type="submit" name="login" value="Submit" id="submit">';
 		}
 		else
 		{
@@ -23,9 +23,3 @@
 	</form>
 </body>
 </html>
-
-<?php
-	session_start();
-	$_SESSION["uid"] = 'name';
-
-?>
