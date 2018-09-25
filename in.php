@@ -11,9 +11,12 @@
 		<section id="right">
 			<?php
 			session_start();
-			//session_id("a");
-			//$_SESSION['uid'] = array();
-			if (isset($_SESSION['uid']) == '')
+			if(isset($_POST['login']) == true)
+			{
+				$_SESSION["uid"] = 'name';
+			}
+
+			if (isset($_SESSION['uid']) == false)
 			{
 				echo "<a href='log.php' id='login'>Login</a><a href='register.html' id='register'>Register</a>";
 			}
@@ -22,7 +25,9 @@
 				echo "Hello ".$_SESSION['uid']."&nbsp;&nbsp;&nbsp;&nbsp;";
 				echo "<a href='logout.php'>Logout</a>";
 			}
-			//session_destroy();
+			
+			
+
 		?>
 		</section>
 
