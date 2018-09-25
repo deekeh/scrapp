@@ -25,7 +25,10 @@
 </html>
 
 <?php
-	session_start();
-	$_SESSION["uid"] = 'name';
-
+	
+	if(isset($_POST['submit']))
+	{
+		session_start();
+		$_SESSION["uid"] = 'name';
+	}
 ?>
