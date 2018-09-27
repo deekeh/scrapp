@@ -11,8 +11,7 @@
 		$_SESSION=array();
 		unset($_SESSION);
 		session_destroy();
+		header('Location: in.php');
 	?>
-	You have been logged out.<br>
-	<a href="in.php">Go to the home page</a>
 </body>
 </html>
