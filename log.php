@@ -5,7 +5,7 @@
 			//session_start();
 			$mail = $_POST['mail'];
 			$pass =$_POST['passwd'];
-			$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+			$db = new PDO('mysql:host=hostname;dbname=dbname', "user", "password");
 			$stmt = $db->query('SELECT mail,first_name FROM login where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
 			
 			$row = $stmt->fetch();
