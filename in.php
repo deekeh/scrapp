@@ -11,14 +11,15 @@
 		<section id="right">
 			<?php
 			session_start();
-			if(isset($_POST['login']) == true)
+			/*if(isset($_POST['login']) == true)
 			{
-				$_SESSION["uid"] = 'name';
-			}
+				session_start();
+				//$_SESSION["uid"] = 'name';
+			}*/
 
 			if (isset($_SESSION['uid']) == false)
 			{
-				echo "<a href='log.php' id='login'>Login</a><a href='register.html' id='register'>Register</a>";
+				echo "<a href='log.php' id='login'>Login</a><a href='register.php' id='register'>Register</a>";
 			}
 			else
 			{
