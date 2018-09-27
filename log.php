@@ -5,8 +5,8 @@
 					session_start();
 					$mail = $_POST['mail'];
 					$pass =$_POST['passwd'];
-					$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
-					$stmt = $db->query('SELECT mail FROM userdata where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
+					$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+					$stmt = $db->query('SELECT mail FROM login where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
 					
 					$row = $stmt->fetch();
 					if(!empty($row['mail']))	$_SESSION['uid'] = $mail;
@@ -33,8 +33,10 @@
 		}
 		else
 		{
-			echo "You have logged in.<br>";
+			/*echo "You have logged in.<br>";
 			echo "<a href='in.php'>Go to the home page</a>";
+			sleep(10);*/
+			header('Location: in.php');
 		}
 		?>
 	</form>
