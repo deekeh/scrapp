@@ -7,7 +7,7 @@ After the user has successfully regiestered by providing his personal details, h
 The main folder contains the php files:-
 *index.php - main page of the website
 log.php - login page for the user
-logout.php - This page is temporarily displayed when the user logs out of the website
+logout.php - This page is not displayed, it just deletes the session and redirects to main page when the user logs out of the website
 sell.html - The user can apply for his scrap to be sold on the website*
 
 Future uploads and updates:
