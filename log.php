@@ -1,3 +1,20 @@
+<?php
+		//session_start();
+				if(isset($_POST['login']) == true)
+				{
+					session_start();
+					$mail = $_POST['mail'];
+					$pass =$_POST['passwd'];
+					$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
+					$stmt = $db->query('SELECT mail FROM userdata where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
+					
+					$row = $stmt->fetch();
+					if(!empty($row['mail']))	$_SESSION['uid'] = $mail;
+					else echo "Invalid user.";
+				}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="style/loginStyle.css">
 </head>
 <body>
-	<form method="post" action="in.php">
+	<form method="post" action="log.php">
 		<?php
 		session_start();
 		if(isset($_SESSION['uid']) == false)
@@ -16,7 +33,7 @@
 		}
 		else
 		{
-			echo "You have already logged in.<br>";
+			echo "You have logged in.<br>";
 			echo "<a href='in.php'>Go to the home page</a>";
 		}
 		?>
