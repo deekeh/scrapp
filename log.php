@@ -1,17 +1,17 @@
 <?php
-		//session_start();
-				if(isset($_POST['login']) == true)
-				{
-					session_start();
-					$mail = $_POST['mail'];
-					$pass =$_POST['passwd'];
-					$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
-					$stmt = $db->query('SELECT mail FROM login where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
-					
-					$row = $stmt->fetch();
-					if(!empty($row['mail']))	$_SESSION['uid'] = $mail;
-					else echo "Invalid user.";
-				}
+		if (session_status() == PHP_SESSION_NONE) session_start();
+		if(isset($_POST['login']) == true)
+		{
+			//session_start();
+			$mail = $_POST['mail'];
+			$pass =$_POST['passwd'];
+			$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+			$stmt = $db->query('SELECT mail,first_name FROM login where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
+			
+			$row = $stmt->fetch();
+			if(!empty($row['mail']))	$_SESSION['uid'] = $row['first_name'];
+			else echo "Invalid user.";
+		}
 ?>
 
 
@@ -24,7 +24,7 @@
 <body>
 	<form method="post" action="log.php">
 		<?php
-		session_start();
+		if (session_status() == PHP_SESSION_NONE) session_start();
 		if(isset($_SESSION['uid']) == false)
 		{
 			echo '<label>Email- id:<input type="email" name="mail" class="text" required></label><br><br>';
