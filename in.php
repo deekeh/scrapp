@@ -10,13 +10,12 @@
 		
 		<section id="right">
 			<?php
-			session_start();
+			if (session_status() == PHP_SESSION_NONE) session_start();
 			/*if(isset($_POST['login']) == true)
 			{
 				session_start();
 				//$_SESSION["uid"] = 'name';
 			}*/
-
 			if (isset($_SESSION['uid']) == false)
 			{
 				echo "<a href='log.php' id='login'>Login</a><a href='register.php' id='register'>Register</a>";
@@ -28,7 +27,6 @@
 			}
 			
 			
-
 		?>
 		</section>
 
