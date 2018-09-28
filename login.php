@@ -5,7 +5,7 @@
 			//session_start();
 			$mail = $_POST['mail'];
 			$pass =$_POST['passwd'];
-			$db = new PDO('mysql:host=hostname;dbname=dbname', "user", "password");
+			$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
 			$stmt = $db->query('SELECT mail,first_name FROM login where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
 			
 			$row = $stmt->fetch();
@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="style/loginStyle.css">
 </head>
 <body>
-	<form method="post" action="log.php">
+	<form method="post" action="login.php">
 		<?php
 		if (session_status() == PHP_SESSION_NONE) session_start();
 		if(isset($_SESSION['uid']) == false)
@@ -34,9 +34,9 @@
 		else
 		{
 			/*echo "You have logged in.<br>";
-			echo "<a href='in.php'>Go to the home page</a>";
+			echo "<a href='index.php'>Go to the home page</a>";
 			sleep(10);*/
-			header('Location: in.php');
+			header('Location: index.php');
 		}
 		?>
 	</form>
