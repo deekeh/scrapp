@@ -18,7 +18,7 @@
 			}*/
 			if (isset($_SESSION['uid']) == false)
 			{
-				echo "<a href='log.php' id='login'>Login</a><a href='register.php' id='register'>Register</a>";
+				echo "<a href='login.php' id='login'>Login</a><a href='register.php' id='register'>Register</a>";
 			}
 			else
 			{
