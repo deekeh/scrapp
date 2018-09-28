@@ -11,7 +11,7 @@
 		$_SESSION=array();
 		unset($_SESSION);
 		session_destroy();
-		header('Location: in.php');
+		header('Location: index.php');
 	?>
 </body>
 </html>
