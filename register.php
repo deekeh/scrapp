@@ -10,7 +10,7 @@
 		
 		try
 		{
-			$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+			$db = new PDO('mysql:host=hostname;dbname=scrappdb', "username", "password");
 			$stmt = $db->query('SELECT mail FROM login where mail="' 		. $mail .	'"');
 			
 			$row = $stmt->fetch();
