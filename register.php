@@ -17,9 +17,9 @@
 			if(!empty($row['mail'])) $error = "Email already exists";
 			else
 			{
-				/*$sql = "INSERT INTO login (mail, pass, fname, lname, address, pincode) VALUES ('" .$mail."'," ."'" .$pass. "', '" .$name. "', '" .$lname. "', '" .$address. "', '" .$pin. "')";
-				$db->exec($sql);*/
-				$sql = "INSERT INTO login (mail, pass, fname, lname, address, pincode) VALUES ('mail', 'pass', 'fname', 'lname', 'address', '111111');";
+				$sql = "INSERT INTO login (mail, pass, fname, lname, address, pincode) VALUES ('" .$mail."'," ."'" .$pass. "', '" .$name. "', '" .$lname. "', '" .$address. "', '" .$pin. "')";
+				$db->exec($sql);
+				//$sql = "INSERT INTO login (mail, pass, fname, lname, address, pincode) VALUES ('mail', 'pass', 'fname', 'lname', 'address', '111111');";
 				header('Location: in.php');
 			}
 			$db = null;
