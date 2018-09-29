@@ -33,7 +33,7 @@
 	</div>
 	<br><br><br>
 	Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text <br>
-	<br><a href="sell.html">Sell your item</a>
+	<br><a href="sell.php">Sell your item</a>
 	Sample text<br>
 	Sample text<br>
 	Sample text<br>
