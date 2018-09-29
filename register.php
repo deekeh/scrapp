@@ -10,14 +10,14 @@
 		
 		try
 		{
-			$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+			$db = new PDO('mysql:host=hostname;dbname=scrappdb', "user", "password");
 			$stmt = $db->query('SELECT mail FROM login where mail="' 		. $mail .	'"');
 			
 			$row = $stmt->fetch();
 			if(!empty($row['mail'])) $error = "Email already exists";
 			else
 			{
-				$sql = "INSERT INTO login (mail, pass, fname, lname, address, pincode) VALUES ('" .$mail."'," ."'" .$pass. "', '" .$name. "', '" .$lname. "', '" .$address. "', '" .$pin. "')";
+				$sql = "INSERT INTO login (mail, pass, name, lname, address, pincode) VALUES ('" .$mail."'," ."'" .$pass. "', '" .$name. "', '" .$lname. "', '" .$address. "', '" .$pin. "')";
 				$db->exec($sql);
 				//$sql = "INSERT INTO login (mail, pass, fname, lname, address, pincode) VALUES ('mail', 'pass', 'fname', 'lname', 'address', '111111');";
 				header('Location: index.php');
