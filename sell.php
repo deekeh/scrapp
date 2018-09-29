@@ -8,7 +8,7 @@
 	else
 	{
 		$mail = $_SESSION['mail'];
-		$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+		$db = new PDO('mysql:host=hostname;dbname=scrappdb', "user", "password");
 		$stmt = $db->query('SELECT pincode FROM login where mail="' 		. $mail.		'"');
 		$row = $stmt->fetch();
 		if(!empty($row['pincode']))	$pincode = $row['pincode'];
