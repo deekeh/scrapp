@@ -75,9 +75,36 @@ body
 	color: #ffffff;
 }
 
-a
+#logout
+{
+	text-decoration: none;
+	color: #b30000;
+	font-size: 18px;
+}
+
+#menubar .sell
 {
 	text-decoration: none;
 	color: #00b300;
-	font-size: 18px;
+	border-style: none;
+	font-size: 16px;
+	margin-top: 18px;
+	position: fixed;
+	display: inline;
+	/*bottom: 200px;*/
+}
+
+#home-button,#about-button,#contact-button
+{
+	width: 33%;
+	background-color: #00b300;
+	color: #ffffff;
+	border: double;
+	font-size: 20px;
+	border-radius: 15px;
+	
+}
+#home,#about,#contact
+{
+	display: inline;
 }
