@@ -3,11 +3,12 @@
 <head>
 	<title>Scrapp</title>
 	<link rel="stylesheet" type="text/css" href="style/decorate.css">
+	<script type="text/javascript" src="contents.js"></script>
 </head>
 <body>
 	<div id="menubar">
 		<section><img src="images/logo-name-horizontal.png" width="70%"></section>
-		
+		<a href="sell.php" class="sell">Sell your item</a>
 		<section id="right">
 			<?php
 			if (session_status() == PHP_SESSION_NONE) session_start();
@@ -23,7 +24,7 @@
 			else
 			{
 				echo "Hello ".$_SESSION['uid']."&nbsp;&nbsp;&nbsp;&nbsp;";
-				echo "<a href='logout.php'>Logout</a>";
+				echo "<a href='logout.php' id='logout'>Logout</a>";
 			}
 			
 			
@@ -32,8 +33,16 @@
 
 	</div>
 	<br><br><br>
+	<div id="home"><input type="button" id="home-button" value="Home" onclick="navBtn_click(getElementById('home-content'))"></button></div>
+	<div id="about"><input type="button" value="About" id="about-button" onclick="navBtn_click(getElementById('about-content'))"></button></div>
+	<div id="contact"><input type="button" value="Contact us" id="contact-button" onclick="navBtn_click(getElementById('contact-content'))"></button></div>
+	<br><br>
+	<div id="home-content" style="display: block;">Home content</div>
+	<div id="about-content" style="display: none;">About content</div>
+	<div id="contact-content" style="display: none;">Contact content</div>
+	
 	Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text <br>
-	<br><a href="sell.php">Sell your item</a>
+	<br>
 	Sample text<br>
 	Sample text<br>
 	Sample text<br>
