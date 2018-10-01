@@ -13,3 +13,6 @@ sell.html - The user can apply for his scrap to be sold on the website*
 Future uploads and updates:
 The main page will display information about the website
 Database will be included
+
+Update:
+Database is included
