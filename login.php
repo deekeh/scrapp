@@ -5,11 +5,15 @@
 			//session_start();
 			$mail = $_POST['mail'];
 			$pass =$_POST['passwd'];
-			$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+			$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
 			$stmt = $db->query('SELECT mail,first_name FROM login where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
 			
 			$row = $stmt->fetch();
-			if(!empty($row['mail']))	$_SESSION['uid'] = $row['first_name'];
+			if(!empty($row['mail']))
+			{
+				$_SESSION['uid'] = $row['first_name'];
+				$_SESSION['mail'] = $row['mail'];
+			}
 			else echo "Invalid user.";
 		}
 ?>
