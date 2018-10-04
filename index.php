@@ -37,128 +37,36 @@
 	<div id="about"><input type="button" value="About" id="about-button" onclick="navBtn_click(getElementById('about-content'),getElementById('about-button'))"></button></div>
 	<div id="contact"><input type="button" value="Contact us" id="contact-button" onclick="navBtn_click(getElementById('contact-content'),getElementById('contact-button'))"></button></div>
 	<br><br>
-	<div id="home-content" style="display: block;">Home content</div>
-	<div id="about-content" style="display: none;">About content</div>
-	<div id="contact-content" style="display: none;">Contact content</div>
-	
-	Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text <br>
-	<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
-	Sample text<br>
+	<div id="home-content" style="display: block;">
+		<div>
+		<fieldset>
+			<img src="images/scrap.png" width="20%">
+		</fieldset>
+		</div>
+	</div>
+	<div id="about-content" style="display: none;">
+		<div>
+		<fieldset>
+			<img src="images/recycle.png" width="20%">
+		</fieldset>
+		</div><br>
+		<div>
+		<fieldset>
+			<img src="images/apply.png" width="15%">
+		</fieldset>
+		</div><br>
+		<div>
+		<fieldset>
+			<img src="images/delivery.png" width="20%">
+		</fieldset>
+		</div>
+	</div>
+	<div id="contact-content" style="display: none;">
+		<div>
+		<fieldset>
+			<img src="images/contact.png" width="20%">
+		</fieldset>
+		</div>
+	</div>
 </body>
 </html>
