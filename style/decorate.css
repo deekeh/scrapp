@@ -108,3 +108,10 @@ body
 {
 	display: inline;
 }
+
+#home-content fieldset,#about-content fieldset,#contact-content fieldset
+{
+	border-radius: 7px;
+	color: #e6e6e6;
+	border: 3px solid;
+}
