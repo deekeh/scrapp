@@ -3,13 +3,9 @@
 
 	if (isset($_POST['a-submit']))
 	{
-		//if (!empty($_POST['pincode'])) $pin = $_POST['pincode'];
 		$pin = (!empty($_POST['pincode'])) ? $_POST['pincode'] : "";
-		//echo $pin;
 		$umail = (!empty($_POST['umail'])) ? $_POST['umail'] : "";
-		//echo $umail;
 		$appdate = (!empty($_POST['app-date'])) ? $_POST['app-date'] : "";
-		//echo $appdate;
 
 		$query = "select * from orders";
 		if (!empty($pin) || !empty($umail) || !empty($appdate))
@@ -27,18 +23,13 @@
 			}
 			if (!empty($appdate))
 			{
-				$query .= "order_date = '" .$appdate. "'";
+				$query .= "order_date <= '" .$appdate. "'";
 			}
 			$query .= ";";
 		}
-		//echo $query;
-		$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
+		$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
 		$stmt = $db->query($query);
-		$row = $stmt->fetch();
-		foreach ($row as $key => $value) {
-			echo $key."\t".$value."<br>";
-		}
-		//echo $row['pincode'];
+		$row = $stmt->fetchAll();
 	}
 ?>
 
@@ -46,6 +37,24 @@
 <html>
 <head>
 	<title>Control Panel</title>
+	<style type="text/css">
+		table
+		{
+			border: solid 1px;
+			border-radius: 5px;
+		}
+		td,th
+		{
+			border: solid;
+			border-width: 0 0 1px 0;
+			padding: 10px;
+		}
+		tr
+		{
+			border: solid 0 0;
+			border-width: 0 0 1px 0;
+		}
+	</style>
 </head>
 <body>
 	<form method="post">
@@ -54,8 +63,36 @@
 		<label>User email: <input type="email" name="umail" value="<?php if(isset($umail)) echo htmlentities($umail) ?>"></label>&nbsp;&nbsp;<span style="color: #ff0000">||</span>&nbsp;
 
 		<label>Application date (on/before): <input type="date" name="app-date" value="<?php if(isset($appdate)) echo htmlentities($appdate) ?>"></label>&nbsp;&nbsp;<span style="color: #ff0000">||</span>&nbsp;
+		<?php echo $appdate; ?>
 		
 		<input type="submit" name="a-submit" value="Search">
 	</form>
+	<br><br><br>
+	<table border="1">
+		<tr>
+			<th>Order ID</th>
+			<th>User Email ID</th>
+			<th>Mass</th>
+			<th>Application status</th>
+			<th>Application date</th>
+			<th>Pincode</th>
+		</tr>
+			<?php
+				if (isset($row))
+				{
+					foreach ($row as $value)
+					{
+						echo "<tr>";
+						echo "<td>" .$value['order_id']. "</td>";
+						echo "<td>" .$value['user_mail']. "</td>";
+						echo "<td>" .$value['mass']. "</td>";
+						echo "<td>" .$value['order_status']. "</td>";
+						echo "<td>" .$value['order_date']. "</td>";
+						echo "<td>" .$value['pincode']. "</td>";
+						echo "</tr>";
+					}
+				}
+			?>
+	</table>
 </body>
 </html>
