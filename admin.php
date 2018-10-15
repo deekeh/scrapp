@@ -31,7 +31,7 @@
 				$query .= "order_date <= '" .$appdate. "'";
 			}
 		}
-		$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+		$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
 		if(!$db) die();
 		$stmt = $db->query($query);
 		$row = $stmt->fetchAll();
