@@ -32,7 +32,7 @@
 			}
 			$query .= ";";
 		}
-		$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+		$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
 		$stmt = $db->query($query);
 		$row = $stmt->fetchAll();
 	}
