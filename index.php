@@ -8,10 +8,16 @@
 <body>
 	<div id="menubar">
 		<section><img src="images/logo-name-horizontal.png" width="70%"></section>
-		<a href="sell.php" class="sell">Sell your item</a>
+		<?php
+			if (session_status() == PHP_SESSION_NONE) session_start();
+			if(isset($_SESSION['user_type']))
+				if($_SESSION['user_type'])
+					echo '<a href="sell.php" class="sell">Sell your item</a>';
+				else
+					echo '<a href="admin.php" class="sell">Go to admin page</a>';
+		?>
 		<section id="right">
 			<?php
-			if (session_status() == PHP_SESSION_NONE) session_start();
 			/*if(isset($_POST['login']) == true)
 			{
 				session_start();

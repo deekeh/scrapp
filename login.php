@@ -5,8 +5,8 @@
 			//session_start();
 			$mail = $_POST['mail'];
 			$pass =$_POST['passwd'];
-			$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
-			$stmt = $db->query('SELECT mail,first_name,pincode FROM login where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
+			$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+			$stmt = $db->query('SELECT mail,first_name,pincode,user_type FROM login where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
 			
 			$row = $stmt->fetch();
 			if(!empty($row['mail']))
@@ -14,6 +14,7 @@
 				$_SESSION['uid'] = $row['first_name'];
 				$_SESSION['mail'] = $row['mail'];
 				$_SESSION['pincode'] = $row['pincode'];
+				$_SESSION['user_type'] = $row['user_type'];
 			}
 			else echo "Invalid user.";
 		}
