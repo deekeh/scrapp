@@ -10,7 +10,7 @@
 		
 		try
 		{
-			$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+			$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
 			if(!$db) die();
 			$stmt = $db->query('SELECT mail FROM login where mail="' 		. $mail .	'"');
 			
