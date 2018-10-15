@@ -15,10 +15,10 @@
 		$query = "select * from orders";
 		if (!empty($pin) || !empty($umail) || !empty($appdate))
 		{
-			$query .= " where ";
+			$query .= " where order_status != 'accepted' and order_status != 'rejected'";
 			if (!empty($pin))
 			{
-				$query .= "pincode = '" .$pin. "'";
+				$query .= "and pincode = '" .$pin. "'";
 				$query .= (!empty($umail) || !empty($appdate)) ? " and " : "";
 			}
 			if (!empty($umail))
@@ -30,11 +30,43 @@
 			{
 				$query .= "order_date <= '" .$appdate. "'";
 			}
-			$query .= ";";
 		}
-		$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
+		$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+		if(!$db) die();
 		$stmt = $db->query($query);
 		$row = $stmt->fetchAll();
+		$db = null;
+	}
+
+	else if(isset($_POST['app-status-accept']))
+	{
+		$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+		foreach ($_POST['appcheck'] as $sel)
+		{
+			$query = "UPDATE orders SET order_status = 'accepted' WHERE order_id = " .$sel. ";";
+			echo "<br>".$query;
+			$db->beginTransaction();
+			$db->exec($query);
+			$db->commit();
+		}
+		//$db->commit();
+		$db = null;
+		
+	}
+
+	else if (isset($_POST['app-status-reject']))
+	{
+		$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+		foreach ($_POST['appcheck'] as $sel)
+		{
+			$query = "UPDATE orders SET order_status = 'rejected' WHERE order_id = " .$sel. ";";
+			echo "<br>".$query;
+			$db->beginTransaction();
+			$db->exec($query);
+			$db->commit();
+		}
+		//$db->commit();
+		$db = null;
 	}
 ?>
 
@@ -73,7 +105,7 @@
 		<input type="submit" name="a-submit" value="Search">
 	</form>
 	<br><br><br>
-	<form>
+	<form method="post">
 		<table border="1">
 			<tr>
 				<th>Order ID</th>
@@ -95,7 +127,7 @@
 							echo "<td>" .$value['order_status']. "</td>";
 							echo "<td>" .$value['order_date']. "</td>";
 							echo "<td>" .$value['pincode']. "</td>";
-							echo "<td>" ."<input type='checkbox' name='". $value['order_id'] ."'>". "</td>";
+							echo "<td>" ."<input type='checkbox' name='appcheck[]' value='". $value['order_id'] ."'>". "</td>";
 							echo "</tr>";
 						}
 					}
