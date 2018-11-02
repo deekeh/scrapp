@@ -1,4 +1,7 @@
 <?php
+	include 'db_function.php';
+
+
 	if(isset($_POST['reg-submit']))
 	{
 		$name = $_POST['name'];
@@ -10,7 +13,8 @@
 		
 		try
 		{
-			$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
+			conn($db);
+
 			if(!$db) die();
 			$stmt = $db->query('SELECT mail FROM login where mail="' 		. $mail .	'"');
 			
@@ -23,7 +27,7 @@
 				$db->beginTransaction();
 				$db->exec($sql);
 				$db->commit();
-				//$sql = "INSERT INTO login (mail, pass, fname, lname, address, pincode) VALUES ('mail', 'pass', 'fname', 'lname', 'address', '111111');";
+				
 				$db = null;
 				header('Location: index.php');
 			}

@@ -1,11 +1,15 @@
 <?php
+		include 'db_function.php';
+
+
 		if (session_status() == PHP_SESSION_NONE) session_start();
 		if(isset($_POST['login']) == true)
 		{
 			//session_start();
 			$mail = $_POST['mail'];
 			$pass =$_POST['passwd'];
-			$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
+			conn($db);
+			
 			$stmt = $db->query('SELECT mail,first_name,pincode,user_type FROM login where mail="' 		. $mail.		'"   and   pass="'		.$pass.		'"');
 			
 			$row = $stmt->fetch();

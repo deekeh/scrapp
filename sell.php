@@ -1,4 +1,7 @@
 <?php
+	include 'db_function.php';
+
+
 	if (session_status() == PHP_SESSION_NONE) session_start();
 
 	if(isset($_SESSION['uid']) == false)
@@ -8,10 +11,8 @@
 	else
 	{
 		$mail = $_SESSION['mail'];
-		$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
-		//$stmt = $db->query('SELECT pincode FROM login where mail="' 		. $mail.		'"');
-		//$row = $stmt->fetch();
-		//if(!empty($row['pincode']))	$pincode = $row['pincode'];
+		conn($db);
+		
 		$pincode = $_SESSION['pincode'];
 
 		if (isset($_POST['sell-submit']) == true)

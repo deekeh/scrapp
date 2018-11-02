@@ -1,4 +1,7 @@
 <?php
+	include 'db_function.php';
+
+
 	if (session_status() == PHP_SESSION_NONE) session_start();
 	if($_SESSION['user_type']) header('Location: index.php');
 	
@@ -31,7 +34,8 @@
 				$query .= "order_date <= '" .$appdate. "'";
 			}
 		}
-		$db = new PDO('mysql:host=localhost;dbname=scrappdb', "root", "");
+		conn($db);
+		
 		if(!$db) die();
 		$stmt = $db->query($query);
 		$row = $stmt->fetchAll();
@@ -42,7 +46,8 @@
 	{
 		if (!empty($appcheck))
 		{
-			$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+			conn($db);
+			
 			foreach ($_POST['appcheck'] as $sel)
 			{
 				$query = "UPDATE orders SET order_status = 'accepted' WHERE order_id = " .$sel. ";";
@@ -59,7 +64,8 @@
 	{
 		if (!empty($appcheck))
 		{
-			$db = new PDO('mysql:host=dk;dbname=scrappdb', "DK", "Abhidksrvs");
+			conn($db);
+
 			foreach ($_POST['appcheck'] as $sel)
 			{
 				$query = "UPDATE orders SET order_status = 'rejected' WHERE order_id = " .$sel. ";";
