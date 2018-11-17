@@ -3,7 +3,7 @@
 
 
 	if (session_status() == PHP_SESSION_NONE) session_start();
-	if($_SESSION['user_type']) header('Location: index.php');
+	if(!isset($_SESSION['user_type']) || $_SESSION['user_type']) header('Location: index.php');
 	
 	$pin = (!empty($_POST['pincode'])) ? $_POST['pincode'] : "";
 	$umail = (!empty($_POST['umail'])) ? $_POST['umail'] : "";
