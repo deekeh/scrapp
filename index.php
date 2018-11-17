@@ -95,7 +95,7 @@
 		<fieldset>
 			<img class="main-img-left" src="images/recycle.png" width="20%">
 			<div class="img-info">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc tincidunt ante vitae massa. Et harum quidem rerum facilis est et expedita distinctio. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Nam sed tellus id magna elementum tincidunt. Phasellus rhoncus. Aliquam erat volutpat. Nullam eget nisl. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Vivamus porttitor turpis ac leo. Ut tempus purus at lorem. Maecenas aliquet accumsan leo. Mauris elementum mauris vitae tortor. Praesent vitae arcu tempor neque lacinia pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus et lorem id felis nonummy placerat.
+				Relying on your local <i>raddi-wala</i> to sell your scrap? Fret not!! Let Scrapp take care of it for you while you rest back in your home.
 			</div>
 			</img>
 		</fieldset>
@@ -104,7 +104,13 @@
 		<fieldset>
 			<img class="main-img-right" src="images/apply.png" width="15%">
 			<div class="img-info">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc tincidunt ante vitae massa. Et harum quidem rerum facilis est et expedita distinctio. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Nam sed tellus id magna elementum tincidunt. Phasellus rhoncus. Aliquam erat volutpat. Nullam eget nisl. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Vivamus porttitor turpis ac leo. Ut tempus purus at lorem. Maecenas aliquet accumsan leo. Mauris elementum mauris vitae tortor. Praesent vitae arcu tempor neque lacinia pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus et lorem id felis nonummy placerat.
+				<ul>
+					<li>Register for the scrapp service by providing us your location details.</li>
+					<li>Login with your scrapp account.</li>
+					<li>Apply online from home.</li>
+					<li>Take Rest.</li>
+					<li>Order accepted.</li>
+				</ul>
 			</div>
 			</img>
 		</fieldset>
@@ -113,7 +119,8 @@
 		<fieldset>
 			<img class="main-img-left" src="images/delivery.png" width="20%">
 			<div class="img-info">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc tincidunt ante vitae massa. Et harum quidem rerum facilis est et expedita distinctio. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Nam sed tellus id magna elementum tincidunt. Phasellus rhoncus. Aliquam erat volutpat. Nullam eget nisl. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Vivamus porttitor turpis ac leo. Ut tempus purus at lorem. Maecenas aliquet accumsan leo. Mauris elementum mauris vitae tortor. Praesent vitae arcu tempor neque lacinia pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus et lorem id felis nonummy placerat.
+				<br><br>We will even get it picked up!<br>
+				As soon as your application is accepted by us, we send our pick-up agents at your home and it's done!
 			</div>
 			</img>
 		</fieldset>
@@ -125,9 +132,10 @@
 		<fieldset>
 			<img class="main-img-left" src="images/contact.png" width="20%">
 			<div class="img-info">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc tincidunt ante vitae massa. Et harum quidem rerum facilis est et expedita distinctio. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Nam sed tellus id magna elementum tincidunt. Phasellus rhoncus. Aliquam erat volutpat. Nullam eget nisl. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Vivamus porttitor turpis ac leo. Ut tempus purus at lorem. Maecenas aliquet accumsan leo. Mauris elementum mauris vitae tortor. Praesent vitae arcu tempor neque lacinia pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus et lorem id felis nonummy placerat.
 				<br><br>
+				Let's chat! You can
 				<a href="mailto:mail@scrapp.com" style="text-decoration: none; color: #00b300;">Contact us</a>
+				on our mail anytime.
 			</div>
 			</img>
 		</fieldset>
