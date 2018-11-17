@@ -18,43 +18,59 @@
 		$query = "select * from orders";
 		if (!empty($pin) || !empty($umail) || !empty($appdate))
 		{
-			$query .= " where order_status != 'accepted' and order_status != 'rejected'";
+			//$query .= " where order_status != 'accepted' and order_status != 'rejected'";
 			if (!empty($pin))
 			{
-				$query .= "and pincode = '" .$pin. "'";
+				$query .= " where pincode = '" .$pin. "'";
 				$query .= (!empty($umail) || !empty($appdate)) ? " and " : "";
 			}
 			if (!empty($umail))
 			{
-				$query .= "user_mail = '" .$umail. "'";
+				if (empty($pin)) $query .= " where";
+				$query .= " user_mail = '" .$umail. "'";
 				$query .= (!empty($appdate)) ? " and " : "";
 			}
 			if (!empty($appdate))
 			{
-				$query .= "order_date <= '" .$appdate. "'";
+				if (empty($pin) && empty($umail)) $query .= " where";
+				$query .= " order_date <= '" .$appdate. "'";
 			}
+			//$query .= " and order_status != 'accepted' and order_status != 'rejected'";
 		}
+		if (empty($pin) && empty($umail) && empty($appdate)) $query .= " where";
+		else $query .= " and";
+		$query .= " order_status != 'accepted' and order_status != 'rejected'";
+
+		// echo $query;
 		conn($db);
 		
 		if(!$db) die();
 		$stmt = $db->query($query);
-		$row = $stmt->fetchAll();
-		$db = null;
+		if ($stmt != false)
+		{
+			$row = $stmt->fetchAll();
+			$db = null;
+		}
+		else
+			echo $query;
 	}
 
 	else if(isset($_POST['app-status-accept']))
 	{
-		if (!empty($appcheck))
+		if (isset($_POST['appcheck'])) $chk = $_POST['appcheck'];
+		if (!empty($chk))
 		{
 			conn($db);
-			
-			foreach ($_POST['appcheck'] as $sel)
+			//$chk = $_POST['appcheck'];
+			var_dump($chk);
+			foreach ($chk as $sel)
 			{
 				$query = "UPDATE orders SET order_status = 'accepted' WHERE order_id = " .$sel. ";";
-				echo "<br>".$query;
+				//echo "<br>".$query;
 				$db->beginTransaction();
 				$db->exec($query);
 				$db->commit();
+				//echo "done";
 			}
 			$db = null;
 		}
@@ -62,7 +78,8 @@
 
 	else if (isset($_POST['app-status-reject']))
 	{
-		if (!empty($appcheck))
+		if (isset($_POST['appcheck'])) $chk = $_POST['appcheck'];
+		if (!empty($chk))
 		{
 			conn($db);
 
@@ -109,7 +126,7 @@
 
 		<label>User email: <input type="email" name="umail" value="<?php if(isset($umail)) echo htmlentities($umail) ?>"></label>&nbsp;&nbsp;<span style="color: #ff0000">||</span>&nbsp;
 
-		<label>Application date (on/before): <input type="date" name="app-date" value="<?php if(isset($appdate)) echo htmlentities($appdate) ?>"></label>&nbsp;&nbsp;<span style="color: #ff0000">||</span>&nbsp;
+		<label>Application date (on/before): <input type="date" name="app-date" value="<?php //if(isset($appdate)) echo htmlentities($appdate) ?>"></label>&nbsp;&nbsp;<span style="color: #ff0000">||</span>&nbsp;
 		
 		<input type="submit" name="a-submit" value="Search">
 	</form>
